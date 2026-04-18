@@ -13,9 +13,13 @@ import java.util.Collections;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "${cors.allowed-origins:http://localhost:5173}",
+@CrossOrigin(
+        origins = {"https://admin.our-galaxy.space", "http://localhost:5173"},
         allowCredentials = "true",
-        maxAge = 3600)
+        maxAge = 3600,
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS}
+)
 public class AuthController {
 
     @Value("${keycloak.url}")
