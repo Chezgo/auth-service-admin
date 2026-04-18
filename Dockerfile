@@ -23,13 +23,13 @@ COPY --from=builder ${DEPENDENCY}/BOOT-INF/classes /app
 RUN useradd -m -u 1000 spring && chown -R spring:spring /app
 USER spring
 
-EXPOSE 8082
+EXPOSE 8089
 
 ENV SPRING_PROFILES_ACTIVE=prod
-ENV SERVER_PORT=8082
+ENV SERVER_PORT=8089
 ENV JAVA_OPTS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -Djava.security.egd=file:/dev/./urandom"
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://localhost:8082/actuator/health || exit 1
+  CMD wget --quiet --tries=1 --spider http://localhost:8089/actuator/health || exit 1
 
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -cp app:app/lib/* org.example.AuthServiceAdminApplication"]

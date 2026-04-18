@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:8082}
+  port: ${SERVER_PORT:8089}
 
 keycloak:
   url: ${KEYCLOAK_URL:https://keycloak.our-galaxy.space}
