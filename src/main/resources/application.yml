@@ -1,0 +1,27 @@
+server:
+  port: ${SERVER_PORT:8082}
+
+keycloak:
+  url: ${KEYCLOAK_URL:https://keycloak.our-galaxy.space}
+  realm: ${KEYCLOAK_REALM:general_realm}
+  client-id: ${KEYCLOAK_CLIENT_ID:admin-panel}
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:https://admin.our-galaxy.space,http://localhost:5173}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.example: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

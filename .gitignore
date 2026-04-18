@@ -1,0 +1,49 @@
+# ===== Java / Maven =====
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ===== Gradle =====
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ===== IDE =====
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Environment =====
+.env
+.env.local
+*.env
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Docker (частично) =====
+!Dockerfile
+!docker-compose.yml
+.docker/
