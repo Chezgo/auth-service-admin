@@ -32,4 +32,4 @@ ENV JAVA_OPTS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -Djava.securit
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
   CMD wget --quiet --tries=1 --spider http://localhost:8089/actuator/health || exit 1
 
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -cp app:app/lib/* org.example.AuthServiceAdminApplication"]
+ENTRYPOINT ["java", "-cp", ".:lib/*", "${JAVA_OPTS}", "org.example.AuthServiceAdminApplication"]
